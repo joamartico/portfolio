@@ -23,7 +23,6 @@ export default function Home() {
 					content="3XoSVdS7QLQWutddbE1sJ60XT3mFR-WXrP80V4AharU"
 				/>
 			</Head>
-			che si te sirve podemos juntarnos y veo si puedo ayudarte
 			<Navbar />
 			<Main>
 				<Container>
