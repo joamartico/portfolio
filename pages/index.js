@@ -2,6 +2,7 @@ import Head from "next/head";
 import Image from "next/image";
 import styled, { keyframes } from "styled-components";
 import Navbar from "../components/Navbar";
+import Project from "../components/Project";
 import styles from "../styles/Home.module.css";
 
 export default function Home() {
@@ -42,47 +43,77 @@ export default function Home() {
 
 				<Skills>
 					<Text>Skills</Text>
-					<Slider>
-						<Slide>
-							<SkillImg src="/js.png" alt="javascript" />
-							<SkillImg src="/html.png" alt="html" />
-							<SkillImg src="/css.svg.png" alt="css" />
-							<SkillImg src="/react.png" alt="react" />
-							<SkillImg src="/firebase.svg.png" alt="firebase" />
-						</Slide>
-						<Slide>
-							<SkillImg src="/js.png" alt="javascript" />
-							<SkillImg src="/html.png" alt="html" />
-							<SkillImg src="/css.svg.png" alt="css" />
-							<SkillImg src="/react.png" alt="react" />
-							<SkillImg src="/firebase.svg.png" alt="firebase" />
-						</Slide>
-					</Slider>
-
-					<Slider>
-						<Slide>
-							<SkillImg src="/nextjs.svg.png" alt="next" />
-							<SkillImg src="/ionic.svg.png" alt="ionic" />
-							<SkillImg src="/solidity.svg" alt="solidity" />
-							<SkillImg
-								src="/styled-components.png"
-								alt="styled-components"
-							/>
-							<SkillImg src="/mongodb.png" alt="mongodb" />
-						</Slide>
-						<Slide>
-							<SkillImg src="/nextjs.svg.png" alt="next" />
-							<SkillImg src="/ionic.svg.png" alt="ionic" />
-							<SkillImg src="/solidity.svg" alt="solidity" />
-							<SkillImg
-								src="/styled-components.png"
-								alt="styled-components"
-							/>
-							<SkillImg src="/mongodb.png" alt="mongodb" />
-						</Slide>
-					</Slider>
-					
 				</Skills>
+
+				<Slider>
+					<Slide>
+						<SkillImg src="/js.png" alt="javascript" />
+						<SkillImg src="/html.png" alt="html" />
+						<SkillImg src="/css.svg.png" alt="css" />
+						<SkillImg src="/react.png" alt="react" />
+						<SkillImg src="/firebase.svg.png" alt="firebase" />
+					</Slide>
+					<Slide>
+						<SkillImg src="/js.png" alt="javascript" />
+						<SkillImg src="/html.png" alt="html" />
+						<SkillImg src="/css.svg.png" alt="css" />
+						<SkillImg src="/react.png" alt="react" />
+						<SkillImg src="/firebase.svg.png" alt="firebase" />
+					</Slide>
+				</Slider>
+
+				<Slider>
+					<Slide>
+						<SkillImg src="/nextjs.svg.png" alt="next" />
+						<SkillImg src="/ionic.svg.png" alt="ionic" />
+						<SkillImg src="/solidity.svg" alt="solidity" />
+						<SkillImg
+							src="/styled-components.png"
+							alt="styled-components"
+						/>
+						<SkillImg src="/mongodb.png" alt="mongodb" />
+					</Slide>
+					<Slide>
+						<SkillImg src="/nextjs.svg.png" alt="next" />
+						<SkillImg src="/ionic.svg.png" alt="ionic" />
+						<SkillImg src="/solidity.svg" alt="solidity" />
+						<SkillImg
+							src="/styled-components.png"
+							alt="styled-components"
+						/>
+						<SkillImg src="/mongodb.png" alt="mongodb" />
+					</Slide>
+				</Slider>
+
+				<Projects>
+					<Text>Projects</Text>
+
+					<Project
+						title="MyWeeks"
+						description="A great Progressive Web App (PWA) to use as a weekly calendar made with Next.js, Ionic and Firebase. Ideal to set daily and weekly goals, add notes for the week and also set monthly and yearly goals and notes."
+						name="myweeks"
+					/>
+					<Project
+						title="BrainMath"
+						description="BrainMath is a fun PWA made with React.js to train your mind with mathematical exercises. You can either read the math callenge or you can listen to it in the language of your choice to increase the difficulty."
+						name="brainmath"
+					/>
+					<Project
+						title="Foody"
+						description="Foody is a nice restaurant searcher app (and PWA) made with React Native and expo."
+						name="foodyy"
+					/>
+					<Project
+						title="Smart Periodic Table"
+						description="The best interactive perioidc table on the internet. You can search an element and read its properties and you can also classify the elements by one or multiple properties. Made with ReactJS and Ionic."
+						name="smart-periodic-table"
+					/>
+					<Project
+						title="MatchTeams"
+						description="It is a PWA made with Next.js and Ionic where you can create a torunament, set the players, sort them, set the results and see the standings."
+						name="matchteams"
+					/>
+				</Projects>
 
 				{/* <Grid>
 					<a href="https://nextjs.org/docs" className={styles.card}>
@@ -187,8 +218,6 @@ const Presentation = styled.div`
 	justify-content: center;
 `;
 
-
-
 const Grid = styled.div`
 	display: flex;
 	align-items: center;
@@ -215,9 +244,8 @@ const AboutMe = styled.div`
 
 const Skills = styled.div`
 	width: 90%;
-	width: 100vw;
-	/* max-width: 1050px; */
-	margin-top: 100px;
+	max-width: 1050px;
+	margin-top: 150px;
 `;
 
 const SkillImg = styled.img`
@@ -251,7 +279,14 @@ const Slider = styled.div`
 const Slide = styled.div`
 	display: flex;
 	align-items: center;
-	height: 200px;
-	animation: ${scroll} 10s linear infinite;
+	height: 20vh;
+	animation: ${scroll} 15s linear infinite;
 	justify-content: space-between;
+`;
+
+const Projects = styled.div`
+	width: 90%;
+	max-width: 1050px;
+	margin-top: 200px;
+	margin-bottom: 1200px;
 `;
