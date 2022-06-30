@@ -249,10 +249,10 @@ const Skills = styled.div`
 `;
 
 const SkillImg = styled.img`
-	height: 10vh;
+	height: 8vh;
 	/* height: 70px; */
 	padding: 0 30px;
-	margin-right: 8vw;
+	margin-right: 6vw;
 `;
 
 const scroll = keyframes`

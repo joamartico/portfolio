@@ -4,57 +4,93 @@ import styled from "styled-components";
 
 const Project = ({ title, name, description }) => {
 	return (
-		<Wrapper>
-			<a
+		<Grid>
+			{/* <div></div>
+			<div></div> */}
+
+			<ImgLink
 				href={"https://" + name + ".vercel.app"}
 				target="_blank"
 				rel="noopener noreferrer"
 			>
 				<Img src={name + ".png"} alt={title} />
-			</a>
+			</ImgLink>
+			{/* <Info> */}
+			<Title>{title}</Title>
+			<Description>{description}</Description>
+			<ButtonsRow>
+				<Button
+					outlined
+					href={"https://github.com/joamartico/" + name}
+					target="_blank"
+					rel="noopener noreferrer"
+				>
+					View Code
+				</Button>
 
-			<Info>
-				<h2>{title}</h2>
-				<p>{description}</p>
-				<Row>
-					 <Button
-						outlined
-						href={"https://github.com/joamartico/" + name }
-						target="_blank"
-						rel="noopener noreferrer"
-					>
-						View Code
-					</Button>
-
-					<Button
-						href={"https://" + name + ".vercel.app"}
-						target="_blank"
-						rel="noopener noreferrer"
-					>
-						Visit Site
-					</Button> 
-				</Row>
-			</Info>
-		</Wrapper>
+				<Button
+					href={"https://" + name + ".vercel.app"}
+					target="_blank"
+					rel="noopener noreferrer"
+				>
+					Visit Site
+				</Button>
+			</ButtonsRow>
+			{/* </Info> */}
+		</Grid>
 	);
 };
 
 export default Project;
 
-const Wrapper = styled.div`
-	width: 100%;
-	display: flex;
-	flex-wrap: wrap-reverse;
+const Grid = styled.div`
+	/* width: 100%; */
+	/* display: flex; */
+	/* flex-wrap: wrap-reverse;
+    justify-content: center; */
+	/* align-items: center; */
+	/* align-content: center; */
 	margin-top: 80px;
 	margin-bottom: 120px;
+	display: grid;
+	grid-template-areas:
+		"img title"
+		"img description"
+		"img buttons";
+	// column on mobile
+	@media (max-width: 768px) {
+		grid-template-areas:
+			"title"
+			"img"
+			"description"
+			"buttons";
+
+		grid-template-columns: 100%;
+	}
+	grid-template-columns: auto auto;
+	/* grid-gap: 0; */
+	grid-column-gap: 120px;
+	justify-content: start; // iphone siempre a la izquierda
+	align-items: center;
+`;
+
+const ImgLink = styled.a`
+	grid-area: img;
+	display: flex;
+	margin: auto;
 `;
 
 const Img = styled.img`
 	height: 70vh;
+	border: none;
+	@media (max-width: 768px) {
+		margin-top: 15px;
+	}
 `;
 
 const Info = styled.div`
 	width: 50%;
+	min-width: 290px;
 	margin-left: auto;
 	margin-right: auto;
 	/* margin-left: 100px;
@@ -64,22 +100,62 @@ const Info = styled.div`
 	line-height: 2.2rem;
 `;
 
-const Row = styled.div`
+const Title = styled.h2`
+	grid-area: title;
 	display: flex;
+	flex-direction: column;
+	justify-content: end;
+	height: 100%;
+	margin-top: auto;
+	padding-top: 20%;
+	/* padding-left: 20%; */
+	@media (max-width: 768px) {
+		text-align: center;
+	}
+	
+`;
+
+const Description = styled.p`
+	@media (max-width: 768px) {
+		display: none;
+	}
+	grid-area: description;
+	line-height: 2.2rem;
+	/* padding-left: 20%; */
+`;
+
+const ButtonsRow = styled.div`
+	display: flex;
+	width: 100%;
+	/* @media (max-width: 768px) {
+		display: none;
+	} */
+	grid-area: buttons;
+	height: 100%;
+	margin-bottom: auto;
+	padding-bottom: 20%;
+	/* padding-left: 20%; */
+	margin-bottom: 0;
+	margin-top: auto;
+	@media (max-width: 768px) {
+		justify-content: center;
+	}
 `;
 
 const Button = styled.a`
 	margin-top: ${({ mt }) => mt || "5px"};
 	margin-bottom: ${({ mb }) => mb || "5px"};
 	margin-right: 13px;
-	/* font-weight: normal; */
+	@media (max-width: 768px) {
+		margin-left: 6px;
+		margin-right: 6px;
+		margin-top: 10px;
+	}
 	padding: 13px;
 	line-height: 1;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	/* width: ${({ width }) => width || "100%"}; */
-	/* height: ${({ height }) => height || "46px"}; */
 	border-radius: 12px;
 	border: 1px solid ${({ red, background }) => (red ? "red" : background)};
 	cursor: pointer;
@@ -107,4 +183,6 @@ const Button = styled.a`
 			return "white";
 		}
 	}};
+	min-width: 120px;
+	height: fit-content;
 `;
