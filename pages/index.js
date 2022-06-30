@@ -17,14 +17,14 @@ export default function Home() {
 				/>
 				<link rel="icon" href="/profile.jpeg" />
 
+
 				<meta
 					name="google-site-verification"
-					content="-nbP2xPiiCKqRksta-VeZK-UzIAI5e_bmiPp4dr40y4"
+					content="3XoSVdS7QLQWutddbE1sJ60XT3mFR-WXrP80V4AharU"
 				/>
 			</Head>
-
+			che si te sirve podemos juntarnos y veo si puedo ayudarte
 			<Navbar />
-
 			<Main>
 				<Container>
 					<Presentation>
