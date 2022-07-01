@@ -4,16 +4,16 @@ import styled from "styled-components";
 const Navbar = () => {
 	return (
 		<BlurNavBar>
-			<NavButton>About Me</NavButton>
-			<NavButton>Projects</NavButton>
-			<NavButton>Contact Me</NavButton>
+			<NavButton href="#aboutMe">About Me</NavButton>
+			<NavButton href="#projects" >Projects</NavButton>
+			<NavButton href="#contactMe" >Contact Me</NavButton>
 		</BlurNavBar>
 	);
 };
 
 export default Navbar;
 
-const NavButton = styled.div`
+const NavButton = styled.a`
     display: flex;
     justify-content: center;
     align-items: center;

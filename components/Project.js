@@ -111,8 +111,9 @@ const Title = styled.h2`
 	/* padding-left: 20%; */
 	@media (max-width: 768px) {
 		text-align: center;
+		height: fit-content;
+		padding-top: 0;
 	}
-	
 `;
 
 const Description = styled.p`

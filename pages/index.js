@@ -17,7 +17,6 @@ export default function Home() {
 				/>
 				<link rel="icon" href="/profile.jpeg" />
 
-
 				<meta
 					name="google-site-verification"
 					content="3XoSVdS7QLQWutddbE1sJ60XT3mFR-WXrP80V4AharU"
@@ -34,7 +33,7 @@ export default function Home() {
 					<Img src="/profile.jpeg" alt="profile" />
 				</Container>
 
-				<AboutMe>
+				<AboutMe id="aboutMe">
 					<Text>About Me</Text>
 					<Description>
 						I am a passionate and creative frontend developer
@@ -90,7 +89,7 @@ export default function Home() {
 					</Slide>
 				</Slider>
 
-				<Projects>
+				<Projects id="projects">
 					<Text>Projects</Text>
 
 					<Project
@@ -244,13 +243,14 @@ const Img = styled.img`
 const AboutMe = styled.div`
 	width: 90%;
 	max-width: 1050px;
-	margin-top: 100px;
+	padding-top: 120px;
+
 `;
 
 const Skills = styled.div`
 	width: 90%;
 	max-width: 1050px;
-	margin-top: 150px;
+	margin-top: 140px;
 `;
 
 const SkillImg = styled.img`
@@ -292,6 +292,6 @@ const Slide = styled.div`
 const Projects = styled.div`
 	width: 90%;
 	max-width: 1050px;
-	margin-top: 200px;
-	margin-bottom: 1200px;
+	margin-top: 100px;
+	padding-top: 100px;
 `;
