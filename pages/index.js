@@ -257,8 +257,13 @@ const Slider = styled.div`
 	margin-left: 0;
 	background: white;
 	display: flex;
-	overflow: hidden;
+	overflow: auto;
 	justify-content: space-between;
+	// hide scrolbar
+	::-webkit-scrollbar {
+		display: none;
+	}
+	
 `;
 
 const Slide = styled.div`
