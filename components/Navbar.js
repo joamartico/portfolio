@@ -21,7 +21,13 @@ const Navbar = ({ isAboutMeActive, isProjectsActive }) => {
 			<NavButton active={isProjectsActive} href="#projects">
 				Projects
 			</NavButton>
-			<NavButton href="#contactMe">Contact Me</NavButton>
+			<NavButton
+				href="https://www.linkedin.com/in/joamarticorena/"
+				target="_blank"
+				rel="noopener noreferrer"
+			>
+				Contact Me
+			</NavButton>
 		</BlurNavBar>
 	);
 };
@@ -37,7 +43,7 @@ const NavButton = styled.a`
 	width: 25vw;
 	/* background: red; */
 	height: 70%;
-	color: ${({active}) => active ? "#20d490" : "#666"};
+	color: ${({ active }) => (active ? "#20d490" : "#666")};
 	font-size: 75%;
 	font-weight: bold;
 	border-radius: 5px;

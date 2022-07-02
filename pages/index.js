@@ -4,6 +4,7 @@ import { useRef } from "react";
 import styled, { keyframes } from "styled-components";
 import Navbar from "../components/Navbar";
 import Project from "../components/Project";
+import SocialButtons from "../components/SocialButtons";
 import { useObserver } from "../hooks/useObserver";
 
 export default function Home() {
@@ -32,7 +33,9 @@ export default function Home() {
 					content="3XoSVdS7QLQWutddbE1sJ60XT3mFR-WXrP80V4AharU"
 				/>
 			</Head>
+
 			<Navbar isAboutMeActive={isAboutMeActive} isProjectsActive={isProjectsActive} />
+
 			<Main>
 				<Container>
 					<Presentation>
@@ -43,9 +46,8 @@ export default function Home() {
 					<Img src="/profile.jpeg" alt="profile" />
 				</Container>
 
-				<AboutMe id="aboutMe" >
-
-					<Text ref={aboutMeRef}>About Me</Text>
+				<AboutMe id="aboutMe" ref={aboutMeRef}>
+					<Text >About Me</Text>
 					<Description>
 						I am a passionate and creative frontend developer
 						specialized in React.js motivated to grow and create
@@ -54,6 +56,7 @@ export default function Home() {
 						everything I have learned both on platforms like Platzi
 						and Udemy as well as creating my own projects.
 					</Description>
+					<SocialButtons/>
 				</AboutMe>
 
 				<Skills>
@@ -66,6 +69,7 @@ export default function Home() {
 						<SkillImg src="/html.png" alt="html" />
 						<SkillImg src="/css.svg.png" alt="css" />
 						<SkillImg src="/react.png" alt="react" />
+						<SkillImg src="/redux.png" alt="firebase" />
 						<SkillImg src="/firebase.svg.png" alt="firebase" />
 					</Slide>
 					<Slide>
@@ -73,6 +77,7 @@ export default function Home() {
 						<SkillImg src="/html.png" alt="html" />
 						<SkillImg src="/css.svg.png" alt="css" />
 						<SkillImg src="/react.png" alt="react" />
+						<SkillImg src="/redux.png" alt="firebase" />
 						<SkillImg src="/firebase.svg.png" alt="firebase" />
 					</Slide>
 				</Slider>
@@ -81,6 +86,7 @@ export default function Home() {
 					<Slide>
 						<SkillImg src="/nextjs.svg.png" alt="next" />
 						<SkillImg src="/ionic.svg.png" alt="ionic" />
+						<SkillImg src="/pwa.png" alt="solidity" />
 						<SkillImg src="/solidity.svg" alt="solidity" />
 						<SkillImg
 							src="/styled-components.png"
@@ -91,6 +97,7 @@ export default function Home() {
 					<Slide>
 						<SkillImg src="/nextjs.svg.png" alt="next" />
 						<SkillImg src="/ionic.svg.png" alt="ionic" />
+						<SkillImg src="/pwa.png" alt="solidity" />
 						<SkillImg src="/solidity.svg" alt="solidity" />
 						<SkillImg
 							src="/styled-components.png"
@@ -130,45 +137,7 @@ export default function Home() {
 					/>
 				</Projects>
 
-				{/* <Grid>
-					<a href="https://nextjs.org/docs" className={styles.card}>
-						<h2>Documentation &rarr;</h2>
-						<p>
-							Find in-depth information about Next.js features and
-							API.
-						</p>
-					</a>
-
-					<a href="https://nextjs.org/learn" className={styles.card}>
-						<h2>Learn &rarr;</h2>
-						<p>
-							Learn about Next.js in an interactive course with
-							quizzes!
-						</p>
-					</a>
-
-					<a
-						href="https://github.com/vercel/next.js/tree/canary/examples"
-						className={styles.card}
-					>
-						<h2>Examples &rarr;</h2>
-						<p>
-							Discover and deploy boilerplate example Next.js
-							projects.
-						</p>
-					</a>
-
-					<a
-						href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-						className={styles.card}
-					>
-						<h2>Deploy &rarr;</h2>
-						<p>
-							Instantly deploy your Next.js site to a public URL
-							with Vercel.
-						</p>
-					</a>
-				</Grid> */}
+				
 			</Main>
 		</>
 	);
