@@ -1,12 +1,27 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
+import "../styles/Home.module.css";
 
-const Navbar = () => {
+const Navbar = ({ isAboutMeActive, isProjectsActive }) => {
+	const [section, setSection] = useState("");
+
+	// useEffect(() => {
+	// 	setActiveUrl(window.location.pathname);
+	// }, [])
+
 	return (
 		<BlurNavBar>
-			<NavButton href="#aboutMe">About Me</NavButton>
-			<NavButton href="#projects" >Projects</NavButton>
-			<NavButton href="#contactMe" >Contact Me</NavButton>
+			<NavButton
+				active={isAboutMeActive}
+				href="#aboutMe"
+				onClick={() => setSection("aboutMe")}
+			>
+				About Me
+			</NavButton>
+			<NavButton active={isProjectsActive} href="#projects">
+				Projects
+			</NavButton>
+			<NavButton href="#contactMe">Contact Me</NavButton>
 		</BlurNavBar>
 	);
 };
@@ -14,27 +29,30 @@ const Navbar = () => {
 export default Navbar;
 
 const NavButton = styled.a`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    max-width: 180px;
-    width: 25vw;
-    /* background: red; */
-    height: 70%;
-    color: #888;
-    font-size: 75%;
-    font-weight: bold;
-    border-radius: 5px;
-    margin-left: 10px;
-    margin-right: 10px;
-    cursor: pointer;
-    transition: all 0.3s ease-in-out;
-    &:hover {
-        background-color: #20d490;
-        color: white;
-    }
-
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	max-width: 180px;
+	width: 25vw;
+	/* background: red; */
+	height: 70%;
+	color: ${({active}) => active ? "#20d490" : "#666"};
+	font-size: 75%;
+	font-weight: bold;
+	border-radius: 5px;
+	margin-left: 10px;
+	margin-right: 10px;
+	cursor: pointer;
+	transition: all 0.3s ease-in-out;
+	&:hover {
+		background-color: #20d490;
+		color: white;
+	}
+	&:target {
+		opacity: 0.8 !important;
+		background: red !important;
+	}
 `;
 
 const BlurNavBar = styled.div`
@@ -59,5 +77,5 @@ const BlurNavBar = styled.div`
 	justify-content: center;
 	font-size: 1.5rem;
 	font-weight: 600;
-	color: #20d490;
+	/* color: #20d490; */
 `;

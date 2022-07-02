@@ -1,11 +1,21 @@
 import Head from "next/head";
 import Image from "next/image";
+import { useRef } from "react";
 import styled, { keyframes } from "styled-components";
 import Navbar from "../components/Navbar";
 import Project from "../components/Project";
-import styles from "../styles/Home.module.css";
+import { useObserver } from "../hooks/useObserver";
 
 export default function Home() {
+	const aboutMeRef = useRef();
+	const projectsRef = useRef();
+
+	const isAboutMeActive = useObserver(aboutMeRef);
+	console.log("is aboutMe in viewport: ", isAboutMeActive);
+
+	const isProjectsActive = useObserver(projectsRef);
+	console.log("is projects in viewport: ", isProjectsActive);
+
 	return (
 		<>
 			<Head>
@@ -22,7 +32,7 @@ export default function Home() {
 					content="3XoSVdS7QLQWutddbE1sJ60XT3mFR-WXrP80V4AharU"
 				/>
 			</Head>
-			<Navbar />
+			<Navbar isAboutMeActive={isAboutMeActive} isProjectsActive={isProjectsActive} />
 			<Main>
 				<Container>
 					<Presentation>
@@ -33,8 +43,9 @@ export default function Home() {
 					<Img src="/profile.jpeg" alt="profile" />
 				</Container>
 
-				<AboutMe id="aboutMe">
-					<Text>About Me</Text>
+				<AboutMe id="aboutMe" >
+
+					<Text ref={aboutMeRef}>About Me</Text>
 					<Description>
 						I am a passionate and creative frontend developer
 						specialized in React.js motivated to grow and create
@@ -89,7 +100,7 @@ export default function Home() {
 					</Slide>
 				</Slider>
 
-				<Projects id="projects">
+				<Projects id="projects" ref={projectsRef}>
 					<Text>Projects</Text>
 
 					<Project
@@ -212,8 +223,9 @@ const Container = styled.div`
 	/* margin-top: 10%; */
 	/* margin-bottom: 20vh; */
 	width: 90%;
-	height: 88vh;
-	/* font-size: 180px; */
+	height: 84vh;
+	/* background: red; */
+
 `;
 
 const Presentation = styled.div`
@@ -233,18 +245,17 @@ const Grid = styled.div`
 
 const Img = styled.img`
 	border-radius: 50%;
-	width: 100%;
-	max-width: 50vw;
-	max-width: 350px;
-
+	/* width: 350px; */
+	width: 24vw;
+	min-width: 250px;
 	//box-shadow: 0px 0px 10000px #20d49060;
 `;
 
 const AboutMe = styled.div`
 	width: 90%;
 	max-width: 1050px;
-	padding-top: 120px;
-
+	padding-top: 100px;
+	margin-top: 100px;
 `;
 
 const Skills = styled.div`
