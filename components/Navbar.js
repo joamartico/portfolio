@@ -3,7 +3,6 @@ import styled from "styled-components";
 import "../styles/Home.module.css";
 
 const Navbar = ({ isAboutMeActive, isProjectsActive }) => {
-	const [section, setSection] = useState("");
 
 	// useEffect(() => {
 	// 	setActiveUrl(window.location.pathname);
@@ -14,7 +13,6 @@ const Navbar = ({ isAboutMeActive, isProjectsActive }) => {
 			<NavButton
 				active={isAboutMeActive}
 				href="#aboutMe"
-				onClick={() => setSection("aboutMe")}
 			>
 				About Me
 			</NavButton>

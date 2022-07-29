@@ -7,9 +7,11 @@ import Project from "../components/Project";
 import SocialButtons from "../components/SocialButtons";
 import { useObserver } from "../hooks/useObserver";
 
+
 export default function Home() {
 	const aboutMeRef = useRef();
 	const projectsRef = useRef();
+
 
 	const isAboutMeActive = useObserver(aboutMeRef);
 	console.log("is aboutMe in viewport: ", isAboutMeActive);
@@ -23,11 +25,10 @@ export default function Home() {
 				<title>Joa Marticorena</title>
 				<meta
 					name="description"
-					content="Hi! I am Joa Marticorena, a creative and passionate frontend developer. 
+					content="Hi! I am Joaquin Marticorena, a creative and passionate frontend developer. 
 					Welcome to my portfolio"
 				/>
 				<link rel="icon" href="/profile.jpeg" />
-
 				<meta
 					name="google-site-verification"
 					content="3XoSVdS7QLQWutddbE1sJ60XT3mFR-WXrP80V4AharU"
