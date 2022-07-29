@@ -7,11 +7,9 @@ import Project from "../components/Project";
 import SocialButtons from "../components/SocialButtons";
 import { useObserver } from "../hooks/useObserver";
 
-
 export default function Home() {
 	const aboutMeRef = useRef();
 	const projectsRef = useRef();
-
 
 	const isAboutMeActive = useObserver(aboutMeRef);
 	console.log("is aboutMe in viewport: ", isAboutMeActive);
@@ -26,7 +24,7 @@ export default function Home() {
 				<meta
 					name="description"
 					content="Hi! I am Joaquin Marticorena, a creative and passionate frontend developer. 
-					Welcome to my portfolio"
+					Welcome to my portfolio. joamartico"
 				/>
 				<link rel="icon" href="/profile.jpeg" />
 				<meta
@@ -35,7 +33,10 @@ export default function Home() {
 				/>
 			</Head>
 
-			<Navbar isAboutMeActive={isAboutMeActive} isProjectsActive={isProjectsActive} />
+			<Navbar
+				isAboutMeActive={isAboutMeActive}
+				isProjectsActive={isProjectsActive}
+			/>
 
 			<Main>
 				<Container>
@@ -48,7 +49,7 @@ export default function Home() {
 				</Container>
 
 				<AboutMe id="aboutMe" ref={aboutMeRef}>
-					<Text >About Me</Text>
+					<Text>About Me</Text>
 					<Description>
 						I am a passionate and creative frontend developer
 						specialized in React.js motivated to grow and create
@@ -57,7 +58,7 @@ export default function Home() {
 						everything I have learned both on platforms like Platzi
 						and Udemy as well as creating my own projects.
 					</Description>
-					<SocialButtons/>
+					<SocialButtons />
 				</AboutMe>
 
 				<Skills>
@@ -137,8 +138,6 @@ export default function Home() {
 						name="matchteams"
 					/>
 				</Projects>
-
-				
 			</Main>
 		</>
 	);
@@ -195,7 +194,6 @@ const Container = styled.div`
 	width: 90%;
 	height: 84vh;
 	/* background: red; */
-
 `;
 
 const Presentation = styled.div`
@@ -264,7 +262,6 @@ const Slider = styled.div`
 	::-webkit-scrollbar {
 		display: none;
 	}
-	
 `;
 
 const Slide = styled.div`
