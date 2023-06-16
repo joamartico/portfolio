@@ -20,7 +20,7 @@ export default function Home() {
 	return (
 		<>
 			<Head>
-				<title>Joa Marticorena</title>
+				<title>Joa Martico</title>
 				<meta
 					name="description"
 					content="Hi! I am Joaquin Marticorena, a creative and passionate frontend developer. 
@@ -42,7 +42,7 @@ export default function Home() {
 				<Container>
 					<Presentation>
 						<Text>Hi, I am</Text>
-						<Title>Joa Marticorena</Title>
+						<Title>Joa Martico</Title>
 					</Presentation>
 
 					<Img src="/profile.jpeg" alt="profile" />
