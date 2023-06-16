@@ -31,6 +31,8 @@ export default function Home() {
 					name="google-site-verification"
 					content="3XoSVdS7QLQWutddbE1sJ60XT3mFR-WXrP80V4AharU"
 				/>
+				{/* canonical */}
+				<link rel="canonical" href="https://joamarticorena.vercel.app/" />
 			</Head>
 
 			<Navbar
