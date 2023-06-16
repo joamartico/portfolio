@@ -118,6 +118,11 @@ export default function Home() {
 						name="myweeks"
 					/>
 					<Project
+						title="Nutros"
+						description="Nutros is a great web app made with Next.js and Ionic to keep track of your daily nutrients and calories. You can also search for any food and see its nutrients based on real data."
+						name="nutros"
+					/>
+					<Project
 						title="BrainMath"
 						description="BrainMath is a fun PWA made with React.js to train your mind with mathematical exercises. You can either read the math callenge or you can listen to it in the language of your choice to increase the difficulty."
 						name="brainmath"
