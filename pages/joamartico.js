@@ -110,6 +110,26 @@ export default function Home() {
 					</Slide>
 				</Slider>
 
+				<IosApps id="apps">
+					<Text>iOS Apps</Text>
+					<Description>
+						I build iPhone and Apple Watch apps for nutrition, sleep
+						and your body clock, like Glycemic Index AI, Sleep Score
+						and Circadian Rhythm. I also publish a free{" "}
+						<a href="https://joamartico-apps.vercel.app/glycemic-index/">
+							glycemic index chart
+						</a>{" "}
+						with 200+ foods based on published studies, also in{" "}
+						<a href="https://joamartico-apps.vercel.app/es/indice-glucemico/">
+							Spanish
+						</a>
+						.
+					</Description>
+					<AppsLink href="https://joamartico-apps.vercel.app/">
+						See my iOS apps →
+					</AppsLink>
+				</IosApps>
+
 				<Projects id="projects" ref={projectsRef}>
 					<Text>Projects</Text>
 
@@ -283,4 +303,26 @@ const Projects = styled.div`
 	max-width: 1050px;
 	margin-top: 100px;
 	padding-top: 100px;
+`;
+
+const IosApps = styled.div`
+	width: 90%;
+	max-width: 1050px;
+	margin-top: 100px;
+	padding-top: 100px;
+	a {
+		color: #20d490;
+	}
+`;
+
+const AppsLink = styled.a`
+	display: inline-block;
+	margin-top: 16px;
+	padding: 12px 22px;
+	border-radius: 14px;
+	font-size: 18px;
+	font-weight: bold;
+	color: #fff !important;
+	text-decoration: none;
+	background: linear-gradient(174deg, rgba(93, 152, 255, 1) 0%, rgba(0, 63, 255, 1) 80%, rgba(12, 102, 222, 1) 100%);
 `;
